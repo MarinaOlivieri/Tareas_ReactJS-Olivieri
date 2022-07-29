@@ -1,14 +1,14 @@
 import React from 'react';
+import Nav from './Nav'
 
 const Header = () =>{
     return(
         <header id="header">
             <h1 className="titulo">Compra tu videojuego</h1>
-            <nav>
-            <a href="#">Inicio</a>
-            <a href="#">Contacto</a>
-            <a href="#">Ubicaccion</a>
-            </nav>
+            <img src="/logo192.png"/>
+            <Nav 
+                type="header"
+            />
         </header>
     )
 }

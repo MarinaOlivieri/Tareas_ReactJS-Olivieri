@@ -2,7 +2,9 @@ import React from 'react'
 
 const Main = () =>{
     return(
-        <h2>HOME</h2>
+        <main>
+            <h2>HOME</h2>
+        </main>
     )
 }
 export default Main;
