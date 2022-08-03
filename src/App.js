@@ -3,12 +3,13 @@ import Main from './components/Main';
 import Footer from './components/Footer'
 
 
+
 const App = () =>{
     return(
         <>
-            <Header />
-            <Main />
-            <Footer test={true} redes="redes sociales" />
+            <Header/>
+            <Main/>
+            <Footer test={true} redes="redes sociales"/>
         </>
     )
 }

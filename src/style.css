@@ -12,6 +12,11 @@
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
     align-items: center;
 }
+
+.imagen{
+    width: 44px;
+    height: 44px;
+}
 a{
     display: block;
     justify-content: space-evenly;

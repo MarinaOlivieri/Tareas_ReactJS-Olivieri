@@ -1,10 +1,13 @@
 import React from 'react'
+import Contador from './Contador'
 
 const Main = () =>{
     return(
+        <>
         <main>
-            <h2>HOME</h2>
+            <Contador/>
         </main>
+        </>
     )
 }
 export default Main;
