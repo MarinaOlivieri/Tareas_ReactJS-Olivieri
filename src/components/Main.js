@@ -1,13 +1,12 @@
 import React from 'react'
-import Contador from './Contador'
+import ItemLIstContainer from './ItemListContainer';
+
 
 const Main = () =>{
     return(
-        <>
         <main>
-            <Contador/>
+        <ItemLIstContainer/>
         </main>
-        </>
     )
 }
 export default Main;
