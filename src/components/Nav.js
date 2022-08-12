@@ -1,21 +1,26 @@
+import {Link} from "react-router-dom"
+
 const Nav = (props) => {
     
-    const condicion = true
-
     if(props.type == "header"){
         return (
             <nav>
-            <a href="#">Inicio</a>
-            <a href="#">Contacto</a>
-            <a href="#">Ubicaccion</a>
+            <Link to= "/cart">
+                <span className="material-symbols-outlined">
+                shopping_cart_checkout
+                </span> 
+            </Link>
+            <Link to="/PS4">PS4</Link>
+            <Link to="/PS5">PS5</Link>
+            <Link to="/PC">PC</Link>
             </nav>
-          )
+        )
     }else{
         return (
             <nav>
-            <a href="#">Instagram</a>
-            <a href="#">Facebook</a>
-            <a href="#">Youtube</a>
+            <Link to="/instagram">Instagram</Link>
+            <Link to="/facebook">Facebook</Link>
+            <Link to="/youtube">Youtube</Link>
             </nav>
           )
     } 

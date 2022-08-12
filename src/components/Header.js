@@ -1,14 +1,13 @@
-import React from 'react';
+import {Link} from "react-router-dom"
 import Nav from './Nav'
+
 
 const Header = () =>{
     return(
         <header id="header">
-            <h1 className="titulo">Compra tu videojuego</h1>
-            <img className='imagen' src="/logo192.png"/>
-            <span className="material-symbols-outlined">
-                shopping_cart_checkout
-            </span>
+            <Link to="/">
+            <h1 className="titulo_header">Compra tu videojuego</h1>
+            </Link>
             <Nav 
                 type="header"
             />

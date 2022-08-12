@@ -1,13 +1,15 @@
-import { useState, useEffect } from "react"
+import ItemDetail from "./ItemDetail"
 import { products } from "../assets/productos"
-import ItemList from "./ItemList"
+import { useState, useEffect } from "react"
+import {useParams} from "react-router-dom"
 
 
-const ItemLIstContainer = () =>{
 
-    const [listProducts, setListProducts] = useState([])
-    
+const ItemDetailContainer = () =>{
+
+    const [listProducts, setListProducts] = useState([id])
     const [cargando, setCargando] = useState(true)
+    const {id}=useParams()
 
     useEffect(() =>{
         
@@ -19,11 +21,11 @@ const ItemLIstContainer = () =>{
         
 
         data.then((res) =>{
-            setListProducts(res)
+            setListProducts(res.find(item=>item.id==id))
             setCargando(false)
         })
             
-    }, [])
+    }, [id])
 
     if(cargando){
         return(
@@ -33,10 +35,11 @@ const ItemLIstContainer = () =>{
         return (  
             <>
             <h2>Lo ultimo en Videojuegos</h2>
-            <ItemList listProducts={listProducts}/>
+            <ItemDetail listProducts={listProducts}/>
             </>
         )
     }
+
 }
  
-export default ItemLIstContainer;
+export default ItemDetailContainer;
