@@ -1,8 +1,8 @@
 import ItemDetail from "./ItemDetail"
-import { products } from "../assets/productos"
+import { products } from "../../assets/productos"
 import { useState, useEffect } from "react"
 import {useParams} from "react-router-dom"
-import { dataFetch } from "../assets/dataFetch"
+import { dataFetch } from "../../assets/dataFetch"
 
 
 
@@ -15,10 +15,10 @@ const ItemDetailContainer = () =>{
     useEffect(() =>{
     dataFetch(products)
     .then(data =>{
-        setCargando(false)
-        setProduct(data.find(products=>products.id==id))
-    })
-}, [id])
+            setCargando(false)
+            setProduct(data.find(products=>products.id==id))
+        })
+    }, [id])
     if(cargando){
     return(
         <h4>Cargando...</h4>

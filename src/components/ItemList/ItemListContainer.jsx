@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
-import { products } from "../assets/productos"
+import { products } from "../../assets/productos"
 import ItemList from "./ItemList"
-import { dataFetch } from "../assets/dataFetch"
+import { dataFetch } from "../../assets/dataFetch"
 
 
 const ItemListContainer = () =>{
