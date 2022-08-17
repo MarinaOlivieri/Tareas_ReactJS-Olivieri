@@ -54,10 +54,12 @@ h2{
     position: relative;
     overflow: hidden;
     
+    
 }
 
 .item:hover{
     transform: scale(1.05);
+    opacity: 0.8;
 }
 
 img{

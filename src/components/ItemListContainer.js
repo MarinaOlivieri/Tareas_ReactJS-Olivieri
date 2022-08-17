@@ -1,28 +1,21 @@
 import { useState, useEffect } from "react"
 import { products } from "../assets/productos"
 import ItemList from "./ItemList"
+import { dataFetch } from "../assets/dataFetch"
 
 
-const ItemLIstContainer = () =>{
+const ItemListContainer = () =>{
 
     const [listProducts, setListProducts] = useState([])
     
     const [cargando, setCargando] = useState(true)
 
     useEffect(() =>{
-        
-        const data = new Promise((res, rej) =>{
-                setTimeout(() =>{
-                    res(products)
-                }, 2000)
-            })
-        
-
-        data.then((res) =>{
-            setListProducts(res)
+        dataFetch(products)
+        .then(data =>{
             setCargando(false)
-        })
-            
+            setListProducts(data)
+        })       
     }, [])
 
     if(cargando){
@@ -39,4 +32,4 @@ const ItemLIstContainer = () =>{
     }
 }
  
-export default ItemLIstContainer;
+export default ItemListContainer;

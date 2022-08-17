@@ -1,10 +1,11 @@
+const ItemDetail = ({product}) =>{
 
-const ItemDetail = () =>{
-
+    const {image, title} = product
 
     return ( 
         <div>
-         <h2>Soy un contenedor</h2>
+         <h4>{title}</h4>
+         <img src={image} alt="" />
         </div>
     )
 }
