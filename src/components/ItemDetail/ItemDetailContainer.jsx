@@ -3,6 +3,7 @@ import { products } from "../../assets/productos"
 import { useState, useEffect } from "react"
 import {useParams} from "react-router-dom"
 import { dataFetch } from "../../assets/dataFetch"
+import Page from "../../Page"
 
 
 
@@ -25,10 +26,9 @@ const ItemDetailContainer = () =>{
     )
     }else{
         return (  
-            <>
-                <h2>Lo ultimo en Videojuegos</h2>
+            <Page titulo="Lo ultimo en Videojuegos">
                 <ItemDetail product={product}/>
-            </>
+            </Page>
         )
     }
     

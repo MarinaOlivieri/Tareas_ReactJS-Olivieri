@@ -2,6 +2,8 @@ import { useState, useEffect } from "react"
 import { products } from "../../assets/productos"
 import ItemList from "./ItemList"
 import { dataFetch } from "../../assets/dataFetch"
+import Page from "../../Page"
+
 
 
 const ItemListContainer = () =>{
@@ -24,10 +26,9 @@ const ItemListContainer = () =>{
         )
     }else{
         return (  
-            <>
-            <h2>Lo ultimo en Videojuegos</h2>
+            <Page titulo="Lo Ultimo en Videojuegos">
             <ItemList listProducts={listProducts}/>
-            </>
+            </Page>
         )
     }
 }

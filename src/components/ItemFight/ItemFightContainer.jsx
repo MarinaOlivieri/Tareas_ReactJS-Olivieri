@@ -3,6 +3,7 @@ import { useState, useEffect } from "react"
 import {useParams} from "react-router-dom"
 import {products} from "../../assets/productos"
 import { dataFetch } from "../../assets/dataFetch"
+import Page from "../../Page"
 
 const ItemFightContainer = () =>{
     
@@ -23,9 +24,9 @@ const ItemFightContainer = () =>{
         )
     }else{
         return ( 
-            <>
+            <Page titulo="Catalago" subtitulo="Juegos de Lucha">
                 <ItemFight product={product}/>
-            </>
+            </Page>
         );
     }
 }

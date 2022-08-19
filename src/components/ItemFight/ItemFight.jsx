@@ -1,7 +1,7 @@
 const ItemFight = () =>{
     return (
         <>
-        <h2>Fight</h2>
+
         </>
     )
 }
