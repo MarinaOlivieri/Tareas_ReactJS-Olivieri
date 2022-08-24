@@ -2,7 +2,6 @@ const Page = (props) =>{
 
     const {titulo, subtitulo} = props 
 
-    console.log(props)
     return ( 
         <div>
             <h2>{titulo}</h2>

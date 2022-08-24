@@ -14,7 +14,7 @@ const Main = () =>{
                 <Route path="/detalle/:id" element={<ItemDetailsContainer/>}/>
                 <Route path="/cart" element={<Cart/>}/>
                 <Route path="/Fight/:category" element={<ItemFightContainer/>}/>
-                <Route path="/Aventure/:category" element={<ItemAventureContainer/>}/>
+                <Route path="/Accion/:category" element={<ItemAventureContainer/>}/>
                 <Route path="/SurvivorHorror/:category" element={<ItemHorrorContainer/>}/>
             </Routes>
         </main>

@@ -15,7 +15,7 @@ const ItemAventureContainer = () =>{
         dataFetch(products)
         .then(data =>{
             setCargando(false)
-            setProduct(data.find(products=>products.category==category))
+            setProduct(data.find(products=>products.category=="Accion"))
         })
     }, [category])
     if(cargando){

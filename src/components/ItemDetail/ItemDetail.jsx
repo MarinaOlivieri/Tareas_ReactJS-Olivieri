@@ -1,11 +1,16 @@
+import { useContext } from "react";
 import Contador from "../Contador";
+import { contexto } from "../CartContext";
 
 const ItemDetail = ({product}) =>{
+    
+    const {agregarProducto} = useContext(contexto)
+     
 
     const {image, title} = product
     const onAdd = (contador) =>{
         product.cantidad = contador
-        console.log(product)
+        agregarProducto(product)
     }
 
     return ( 
@@ -16,5 +21,5 @@ const ItemDetail = ({product}) =>{
         </div>
     )
 }
- 
-export default ItemDetail;
+
+export default ItemDetail

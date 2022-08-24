@@ -26,7 +26,7 @@ export const products = [{
     id: 4,
     image: "https://m.media-amazon.com/images/I/71eMwh15dlL._SX342_.jpg",
     title: "A Plague Tale REQUIEM -PS5",
-    category: "Aventure",
+    category: "Survivor Horror",
     price: 150,
     stock: 30,
 }]

@@ -15,7 +15,7 @@ const ItemFightContainer = () =>{
         dataFetch(products)
         .then(data =>{
             setCargando(false)
-            setProduct(data.find(products=>products.category==category))
+            setProduct(data.find(products=>products.category=="Fight"))
         })
     }, [category])
     if(cargando){
