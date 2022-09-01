@@ -1,18 +1,17 @@
 import { Link } from "react-router-dom";
 import { useContext } from "react";
-import { contexto } from "./CartContext";
+import { context } from "./CartContext";
 
 const CartWidget = () =>{
 
-    const {cantidad} = useContext(contexto)
+    const {productQty} = useContext(context)
     
-
     return (
         <Link to= "/cart">
             <span className="material-symbols-outlined">
                 shopping_cart_checkout
             </span> 
-            {cantidad}
+            {productQty()}
         </Link>
     )
 }

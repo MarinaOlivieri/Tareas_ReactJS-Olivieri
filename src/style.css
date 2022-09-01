@@ -29,7 +29,7 @@ main{
     padding: 1rem;
 }
 
-h2{
+.h2-general{
     text-align: center;
 }
 
@@ -68,9 +68,26 @@ h2{
 
 img{
     width: 342px;
-    height: 432px; 
-    
-    
+    height: 432px;   
+}
+
+.img-cart{
+    width: 192px;
+    height: 242px;
+}
+
+.container-cart{
+    min-width: 1000vh;
+    height: auto;
+    background-color: #f0f0f0;
+    padding-top: 30px;
+}
+
+.cart-card{
+    background-color: #fff;
+    height: auto;
+    margin-bottom: 15px;
+    padding: 30px 15px;
 }
 
 footer{

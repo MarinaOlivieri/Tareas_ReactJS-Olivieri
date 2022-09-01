@@ -1,31 +1,52 @@
 import { createContext } from 'react';
 import { useState } from 'react';
 
-export const contexto = createContext()
-const {Provider} = contexto
+
+export const context = createContext()
+const {Provider} = context
 
 const CartContext = (props) =>{
 
-    const [cantidad, setCantidad] = useState(0)
+    const [cart, setCart] = useState([])
 
-    const agregarProducto = (producto) =>{
-        console.log("Soy el contexto")
-        console.log(producto)  
-        setCantidad(cantidad + producto.cantidad)  
+    const isInCart = (id) =>{
+        return cart.some(product => product.id === id)
     }
 
-    const eliminarProducto = () =>{}
+    const clearCart = () =>{
+        return setCart([])
+    }
 
-    const valorDelcontexto = {
-        cantidad: cantidad, 
-        carrito: [],
-        agregarProducto,
-        eliminarProducto
+    const addProduct = (product, cantidad) =>{
+        const newProduct = {
+            ...product,
+            cantidad
+        }
+        if(isInCart(newProduct.id)){
+            const findProduct = cart.find(product => product.id === newProduct.id)
+            const productIndex = cart.indexOf(findProduct)
+            const auxArray = [...cart]
+            auxArray[productIndex].cantidad += cantidad 
+            setCart(auxArray)
+        }else{
+            setCart([...cart, newProduct])
+        }
+    }
 
+    const deleteProduct = (id) =>{
+        return setCart(cart.filter(product => product.id !== id ))
+    }
+    
+    const productQty = () =>{
+        return cart.reduce((acc, product) => acc += product.cantidad, 0)
+    }
+
+    const totalPrice = () =>{
+        return cart.reduce((acc, product) => acc += product.cantidad * product.price, 0)
     }
 
     return (  
-        <Provider value={valorDelcontexto}>
+        <Provider value={{cart, isInCart, addProduct, clearCart, deleteProduct, productQty, totalPrice}}>
             {props.children}
         </Provider>
     )

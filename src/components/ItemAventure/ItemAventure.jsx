@@ -1,18 +1,25 @@
 import Contador from "../Contador"
+import { useContext, useState } from "react"
+import { context } from "../CartContext"
 
 const ItemAventure = ({product}) =>{
 
     const {image, title} = product
-    const onAdd = (contador) =>{
-        product.cantidad = contador
-        console.log(product)
+   
+    const [cantidad, setCantidad] = useState(0)
+    
+    const {isInCart, addProduct} = useContext(context)
+
+    const onAdd = (cantidad) =>{
+        isInCart(product.id)
+        addProduct(product, cantidad)
     }
 
     return (  
         <div>
              <h4>{title}</h4>
             <img src={image}/>
-            <Contador onAdd={onAdd}/>
+            <Contador onAdd={onAdd} cantidad={cantidad}/>
         </div>
     )
 }

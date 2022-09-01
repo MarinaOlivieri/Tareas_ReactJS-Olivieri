@@ -1,11 +1,13 @@
 import {useState} from 'react'
  
-const Contador = ({onAdd}) => {
+const Contador = ({onAdd, cantidad,}) => {
 
-    const [contador, setContador] = useState(0)
+  
+
+    const [contador, setContador] = useState(cantidad)
 
     const aumentar = () =>{
-        setContador(contador +1)
+        setContador(contador + 1)
     }
 
     const restar = () =>{

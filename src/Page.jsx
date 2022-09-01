@@ -4,7 +4,7 @@ const Page = (props) =>{
 
     return ( 
         <div>
-            <h2>{titulo}</h2>
+            <h2 className="h2-general">{titulo}</h2>
             <h3>{subtitulo}</h3>
             <div>
             {props.children}
