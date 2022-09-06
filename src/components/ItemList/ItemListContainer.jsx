@@ -1,24 +1,37 @@
 import { useState, useEffect } from "react"
-import { products } from "../../assets/productos"
 import ItemList from "./ItemList"
-import { dataFetch } from "../../assets/dataFetch"
 import Page from "../../Page"
-
-
+import { db } from "../../Firebase"
+import { collection, getDocs, query, where } from "firebase/firestore"
+import { useParams } from "react-router-dom"
 
 const ItemListContainer = () =>{
 
     const [listProducts, setListProducts] = useState([])
-    
     const [cargando, setCargando] = useState(true)
+    const {id,} = useParams
 
     useEffect(() =>{
-        dataFetch(products)
-        .then(data =>{
+
+        const productosCollection = collection(db, "Productos")
+        // const filtro = query(productosCollection,where("category", "==", id))
+        const consulta = getDocs(productosCollection)
+
+        consulta
+        .then(snapshot=>{
+            const productos = snapshot.docs.map(doc=>{
+                return{
+                    ...doc.data(),
+                    id: doc.id
+                }
+            })
             setCargando(false)
-            setListProducts(data)
-        })       
-    }, [])
+            setListProducts(productos)
+        })
+        .catch(err=>{
+            console.log(err)
+        })      
+    }, [id])
 
     if(cargando){
         return(

@@ -4,6 +4,7 @@ import Footer from './components/Footer'
 import { BrowserRouter } from 'react-router-dom';
 import CartContext from './components/CartContext';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import "./Firebase"
 
 const App = () =>{
     return(

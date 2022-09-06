@@ -6,18 +6,16 @@ import { Link } from "react-router-dom";
 
 const Cart = () =>{
 
-    // const {image, title, price} = product
-
     const {cart, deleteProduct, clearCart} = useContext(context)
 
     if (cart.length > 0) {
         return(
-            <div className="container-cart col-xl-8">
+            <div className="container-cart">
                 {
                     cart.map((product, index) =>{
-                        return <div className="cart-card col-xl-6 d-flex aling-items-center" key={index}>
+                        return <div className="cart-card" key={index}>
                             <div>
-                                <img className="img-cart" src={product.image} alt={product.title} width={150}/>
+                                <img className="img-cart" src={product.image} alt={product.title}/>
                             </div>
                             <div>
                                 <h5>{product.title}</h5>

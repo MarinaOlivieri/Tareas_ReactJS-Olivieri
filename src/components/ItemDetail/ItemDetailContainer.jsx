@@ -1,11 +1,9 @@
 import ItemDetail from "./ItemDetail"
-import { products } from "../../assets/productos"
 import { useState, useEffect } from "react"
 import {useParams} from "react-router-dom"
-import { dataFetch } from "../../assets/dataFetch"
 import Page from "../../Page"
-
-
+import { db } from "../../Firebase"
+import { collection, getDoc, doc } from "firebase/firestore"
 
 const ItemDetailContainer = () =>{
 
@@ -14,16 +12,26 @@ const ItemDetailContainer = () =>{
     const {id}=useParams()
 
     useEffect(() =>{
-    dataFetch(products)
-    .then(data =>{
+
+        const productosCollection = collection(db, "Productos")
+        const referencia = doc(productosCollection,id)
+        const consulta = getDoc(referencia)
+
+        consulta
+        .then(snapshot=>{
             setCargando(false)
-            setProduct(data.find(products=>products.id==id))
+            setProduct(snapshot.data())
+    
         })
-    }, [id])
+        .catch(err=>{
+            console.log(err)
+        })
+    },[id])
+
     if(cargando){
-    return(
-        <h4>Cargando...</h4>
-    )
+        return(
+            <h4>Cargando...</h4>
+        )
     }else{
         return (  
             <Page titulo="Lo ultimo en Videojuegos">
@@ -31,9 +39,6 @@ const ItemDetailContainer = () =>{
             </Page>
         )
     }
-    
 }
 
-
- 
 export default ItemDetailContainer;

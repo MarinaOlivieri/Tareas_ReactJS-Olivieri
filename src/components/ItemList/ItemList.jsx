@@ -4,7 +4,7 @@ const ItemList = ({listProducts}) =>{
 
     return (  
         <section className="items">    
-        {listProducts.map(products => <Item key={products.id} products={products}/>)}
+        {listProducts.map(productos => <Item key={productos.id} productos={productos}/>)}
         </section>
     );
 }

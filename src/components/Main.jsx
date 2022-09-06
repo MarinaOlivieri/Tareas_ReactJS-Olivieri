@@ -2,9 +2,6 @@ import {Routes, Route} from "react-router-dom"
 import ItemListContainer from './ItemList/ItemListContainer'
 import Cart from "./Cart"
 import ItemDetailsContainer from "./ItemDetail/ItemDetailContainer"
-import ItemHorrorContainer from "./ItemHorror/ItemHorrorContainer"
-import ItemAventureContainer from "./ItemAventure/ItemAventureContainer"
-import ItemFightContainer from "./ItemFight/ItemFightContainer"
 
 const Main = () =>{
     return(
@@ -13,9 +10,9 @@ const Main = () =>{
                 <Route path="/" element={<ItemListContainer/>}/>
                 <Route path="/detalle/:id" element={<ItemDetailsContainer/>}/>
                 <Route path="/cart" element={<Cart/>}/>
-                <Route path="/Fight/:category" element={<ItemFightContainer/>}/>
-                <Route path="/Accion/:category" element={<ItemAventureContainer/>}/>
-                <Route path="/SurvivorHorror/:category" element={<ItemHorrorContainer/>}/>
+                <Route path="/Fight/:category" element={<ItemListContainer/>}/>
+                <Route path="/Accion/:category" element={<ItemListContainer/>}/>
+                <Route path="/SurvivorHorror/:category" element={<ItemListContainer/>}/>
             </Routes>
         </main>
     )

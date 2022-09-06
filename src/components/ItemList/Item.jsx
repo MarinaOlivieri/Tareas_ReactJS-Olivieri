@@ -1,8 +1,8 @@
 import {Link} from "react-router-dom"
 
-const Item = ({products}) =>{
+const Item = ({productos}) =>{
 
-    const { title, image, price, id } = products
+    const { title, image, price, id } = productos
 
     return (
         <article className="item">
